@@ -112,7 +112,19 @@ class EobotAPI {
                 .setPriority(Priority.LOW)
                 .build()
                 .getAsJSONObject(listener)
-    }                            
-           
+    }        
 
+    fun exchangeEstimate(hasExchangeFee : String, currencyFrom : String, 
+                                        amount : String, currencyTo : String, 
+                                        listener : JSONObjectRequestListener) : Unit {
+
+        val options = 'exchangefee='+hasExchangeFee+'&convertfrom='+currencyFrom+'&amount='+amount+'&convertto='+currencyTo
+        val urlToCall = urlApi+options+"&json=true"
+        logger.info("Url to call: $urlToCall")
+        AndroidNetworking.get(urlToCall)
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsJSONObject(listener)
+    }      
+               
 }

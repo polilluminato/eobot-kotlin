@@ -145,6 +145,14 @@ fun buyCloudWithCryptocurrency(userId : String, email : String,
                                         listener : JSONObjectRequestListener) : Unit {}
 ```
 
+#### Exchange Estimate
+Programmatically get estimate. Pass in querystring from coin type, to coin type, and cryptocurrency amount.
+```javascript
+fun exchangeEstimate(hasExchangeFee : String, currencyFrom : String, 
+                                        amount : String, currencyTo : String, 
+                                        listener : JSONObjectRequestListener) : Unit {}
+```
+
 ### Disclaimer
 I'm **not** associated or **related** with Eobot.com, this is my implementation based on the public API. I'm **not** responsible if **you** lose money using this library because this is a Kotlin Class for the Eobot.com Public API.
 
