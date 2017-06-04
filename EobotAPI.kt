@@ -63,7 +63,7 @@ class EobotAPI {
                     password : String, miningMode : String, 
                     listener : JSONObjectRequestListener) : Unit {
 
-        val options = 'id='+userId+'&email='+email+'&password='+password+'&mining='+miningMode
+        val options = "id="+userId+"&email="+email+"&password="+password+"&mining="+miningMode
         val urlToCall = urlApi+options+"&json=true"
         logger.info("Url to call: $urlToCall")
         AndroidNetworking.get(urlToCall)
@@ -77,7 +77,7 @@ class EobotAPI {
                                 amount : String, walletAddress : String, 
                                 listener : JSONObjectRequestListener) : Unit {
 
-        val options = 'id='+userId+'&email='+email+'&password='+password+'&withdraw='+currency+'&amount='+amount+'&wallet='+walletAddress
+        val options = "id="+userId+"&email="+email+"&password="+password+"&withdraw="+currency+"&amount="+amount+"&wallet="+walletAddress
         val urlToCall = urlApi+options+"&json=true"
         logger.info("Url to call: $urlToCall")
         AndroidNetworking.get(urlToCall)
@@ -91,7 +91,7 @@ class EobotAPI {
                             amount : String, walletAddress : String, 
                             listener : JSONObjectRequestListener) : Unit {
 
-        val options = 'id='+userId+'&email='+email+'&password='+password+'&manualwithdraw='+currency+'&amount='+amount+'&wallet='+walletAddress
+        val options = "id="+userId+"&email="+email+"&password="+password+"&manualwithdraw="+currency+"&amount="+amount+"&wallet="+walletAddress
         val urlToCall = urlApi+options+"&json=true"
         logger.info("Url to call: $urlToCall")
         AndroidNetworking.get(urlToCall)
@@ -105,7 +105,7 @@ class EobotAPI {
                                         amount : String, cloudType : String, 
                                         listener : JSONObjectRequestListener) : Unit {
 
-        val options = 'id='+userId+'&email='+email+'&password='+password+'&convertfrom='+currencyFrom+'&amount='+amount+'&convertto='+cloudType
+        val options = "id="+userId+"&email="+email+"&password="+password+"&convertfrom="+currencyFrom+"&amount="+amount+"&convertto="+cloudType
         val urlToCall = urlApi+options+"&json=true"
         logger.info("Url to call: $urlToCall")
         AndroidNetworking.get(urlToCall)
@@ -118,7 +118,7 @@ class EobotAPI {
                                         amount : String, currencyTo : String, 
                                         listener : JSONObjectRequestListener) : Unit {
 
-        val options = 'exchangefee='+hasExchangeFee+'&convertfrom='+currencyFrom+'&amount='+amount+'&convertto='+currencyTo
+        val options = "exchangefee="+hasExchangeFee+"&convertfrom="+currencyFrom+"&amount="+amount+"&convertto="+currencyTo
         val urlToCall = urlApi+options+"&json=true"
         logger.info("Url to call: $urlToCall")
         AndroidNetworking.get(urlToCall)
