@@ -88,4 +88,19 @@ class EobotAPI {
                 .getAsJSONObject(listener)
     }
 
+
+    fun manualWithdraw(userId : String, email : String, 
+                                password : String, currency : String, 
+                                amount : String, walletAddress : String, 
+                                listener : JSONObjectRequestListener) : Unit {
+
+        val options = 'id='+userId+'&email='+email+'&password='+password+'&manualwithdraw='+currency+'&amount='+amount+'&wallet='+walletAddress
+        val urlToCall = urlApi+options+"&json=true"
+        logger.info("Url to call: $urlToCall")
+        AndroidNetworking.get(urlToCall)
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsJSONObject(listener)
+    }                          
+
 }

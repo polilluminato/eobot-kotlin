@@ -127,6 +127,15 @@ fun setAutomaticWithdraw(userId : String, email : String,
                                 listener : JSONObjectRequestListener) : Unit {}
 ```
 
+#### Manual Withdraw
+Performs a one-time manual withdraw. Pass in querystring (or post parameters) UserID, email, password/API Key, manual withdraw type (BTC, ETH, LTC, etc.), amount, and wallet address.
+```kotlin
+fun manualWithdraw(userId : String, email : String, 
+                                password : String, currency : String, 
+                                amount : String, walletAddress : String, 
+                                listener : JSONObjectRequestListener) : Unit {}
+```
+
 ### Disclaimer
 I'm **not** associated or **related** with Eobot.com, this is my implementation based on the public API. I'm **not** responsible if **you** lose money using this library because this is a Kotlin Class for the Eobot.com Public API.
 
