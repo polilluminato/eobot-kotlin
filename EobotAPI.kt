@@ -5,9 +5,6 @@ import com.androidnetworking.common.Priority
 import com.androidnetworking.interfaces.JSONObjectRequestListener
 import java.util.logging.Logger
 
-/**
- * Created by alberto on 02/06/17.
- */
 class EobotAPI {
 
     companion object {
