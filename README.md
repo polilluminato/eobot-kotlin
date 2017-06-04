@@ -77,6 +77,21 @@ And the result must be something like this
 }
 ```
 
+## API Implmentation
+
+Every API uses as input all the parameters required by Eobot, in the same order as described in the developers page, and return a JSONObject.
+
+#### Get Balances
+Returns total account value followed by cryptocurrency balances. Pass in querystring userId.
+```javascript
+fun getBalances(userId : String, listener : JSONObjectRequestListener) : Unit {}
+```
+#### Get Mining Mode
+Returns the cryptocurrency you are currently mining. Pass in querystring UserID.
+```javascript
+fun getMiningMode(userId : String, listener : JSONObjectRequestListener) : Unit {}
+```
+
 ### Disclaimer
 I'm **not** associated or **related** with Eobot.com, this is my implementation based on the public API. I'm **not** responsible if **you** lose money using this library because this is a Kotlin Class for the Eobot.com Public API.
 
