@@ -101,13 +101,15 @@ fun getSpeed(userId : String, listener : JSONObjectRequestListener) : Unit {}
 #### Get Deposit Address
 Returns a deposit wallet address for specified cryptocurrency. Pass in querystring UserID and deposit type (BTC, ETH, LTC, etc.).
 ```kotlin
-fun getDepositAddress(userId : String, depositType : String, listener : JSONObjectRequestListener) : Unit {}
+fun getDepositAddress(userId : String, depositType : String, 
+                        listener : JSONObjectRequestListener) : Unit {}
 ```
 
 #### Get UserID
 Returns the UserID. Pass in querystring (or post parameters) email and password/API Key.
 ```kotlin
-fun getUserID(email : String, password : String, listener : JSONObjectRequestListener) : Unit {}
+fun getUserID(email : String, password : String, 
+                listener : JSONObjectRequestListener) : Unit {}
 ```
 
 #### Set Mining Mode
