@@ -31,4 +31,15 @@ class EobotAPI {
                 .getAsJSONObject(listener)
     }
 
+
+    fun getSpeed(userId : String, listener : JSONObjectRequestListener) : Unit {
+        val urlToCall = urlApi+"idspeed="+userId+"&json=true"
+        logger.info("Url to call: $urlToCall")
+        AndroidNetworking.get(urlToCall)
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsJSONObject(listener)
+    }
+
+
 }
