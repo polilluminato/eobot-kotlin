@@ -150,7 +150,7 @@ fun buyCloudWithCryptocurrency(userId : String, email : String,
 
 #### Exchange Estimate
 Programmatically get estimate. Pass in querystring from coin type, to coin type, and cryptocurrency amount.
-```javascript
+```kotlin
 fun exchangeEstimate(hasExchangeFee : String, currencyFrom : String, 
                                         amount : String, currencyTo : String, 
                                         listener : JSONObjectRequestListener) : Unit {}
