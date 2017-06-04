@@ -98,6 +98,18 @@ Returns the mining and cloud speeds. Pass in querystring UserID.
 fun getSpeed(userId : String, listener : JSONObjectRequestListener) : Unit {}
 ```
 
+#### Get Deposit Address
+Returns a deposit wallet address for specified cryptocurrency. Pass in querystring UserID and deposit type (BTC, ETH, LTC, etc.).
+```kotlin
+fun getDepositAddress(userId : String, depositType : String, listener : JSONObjectRequestListener) : Unit {}
+```
+
+#### Get UserID
+Returns the UserID. Pass in querystring (or post parameters) email and password/API Key.
+```kotlin
+fun getUserID(email : String, password : String, listener : JSONObjectRequestListener) : Unit {}
+```
+
 ### Disclaimer
 I'm **not** associated or **related** with Eobot.com, this is my implementation based on the public API. I'm **not** responsible if **you** lose money using this library because this is a Kotlin Class for the Eobot.com Public API.
 

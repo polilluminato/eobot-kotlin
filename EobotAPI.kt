@@ -41,5 +41,22 @@ class EobotAPI {
                 .getAsJSONObject(listener)
     }
 
+    fun getDepositAddress(userId : String, depositType : String, listener : JSONObjectRequestListener) : Unit {
+        val urlToCall = urlApi+"id="+userId+"&deposit="+depositType+"&json=true"
+        logger.info("Url to call: $urlToCall")
+        AndroidNetworking.get(urlToCall)
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsJSONObject(listener)
+    }
+
+    fun getUserID(email : String, password : String, listener : JSONObjectRequestListener) : Unit {
+        val urlToCall = urlApi+"email="+email+"&password="+password+"&json=true"
+        logger.info("Url to call: $urlToCall")
+        AndroidNetworking.get(urlToCall)
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsJSONObject(listener)
+    }
 
 }
