@@ -46,6 +46,7 @@ To use the class instantiate it and call methods, for example
 ```java
 public class MainActivity extends AppCompatActivity {
 
+    private String userId = "1";
     private EobotAPI mRequest = new EobotAPI();
 
     @Override
