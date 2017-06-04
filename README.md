@@ -5,4 +5,81 @@
 This Kotlin class provides a implementation for the API of the Cloud mining and Bitcoin mining [Eobot.com](https://www.eobot.com/)   
 > Eobot is the easiest, cheapest, and best way to get or mine Bitcoin, Litecoin, BlackCoin, Namecoin, Dogecoin, Dash, Reddcoin, BitShares, CureCoin, StorjcoinX, Monero, Voxels, Lumens, Bytecoin, Peercoin, NXT, MaidSafeCoin, Ethereum, and Factom. Whether or not you use our Cloud Mining or your own hardware, you can mine any cryptocurrency, regardless if it is based on a SHA-256 or Scrypt algorithm.
 
+and you can use it in an Android App.
 The API that Eobot expose are listed in this page: [Eobot Developers](https://www.eobot.com/developers).
+
+## Requirements
+
+This kotlin class uses [Fast-Android-Networking](https://github.com/amitshekhariitbhu/Fast-Android-Networking) to make the request so, you have to include it in your Android App Project. As described in the Fast-Android-Networking [Readme.md](https://github.com/amitshekhariitbhu/Fast-Android-Networking/blob/master/README.md) add this in your build.gradle
+```groovy
+compile 'com.amitshekhar.android:android-networking:1.0.0'
+```
+Add internet permission in manifest if already not present
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+Then initialize it in onCreate() Method of application class, in my case I use this custom App.class:
+
+```java
+public class App extends Application {
+
+    private static Context mContext;
+    public static Context getContext(){
+        return mContext;
+    }
+
+    // Called when the application is starting, before any other application objects have been created.
+    // Overriding this method is totally optional!
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+        AndroidNetworking.initialize(getApplicationContext());
+    }
+}
+```
+After that you can put the EobotAPI.kt class wherever you want.
+
+## Usage
+
+To use the class instantiate it and call methods, for example
+```java
+public class MainActivity extends AppCompatActivity {
+
+    private EobotAPI mRequest = new EobotAPI();
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        //Call the getBalances Method
+        mRequest.getBalances(userId,new JSONObjectRequestListener() {
+            @Override
+            public void onResponse(JSONObject response) {
+                Log.i("RESPONSE","Response: " + response.toString());
+            }
+            @Override
+            public void onError(ANError anError) {}
+        });
+    
+    }     
+
+}
+```
+And the result must be something like this
+```
+{
+  "Total":"6.10402110","BTC":"0.00000000","ETH":"0.00000000",
+  ...
+  "GHS":"0.00000000","GHS2":"0.00000000","SCRYPT":"0.00000000",
+  "BPPD":"0.00000000","PPD":"0.00000000"
+}
+```
+
+### Disclaimer
+I'm **not** associated or **related** with Eobot.com, this is my implementation based on the public API. I'm **not** responsible if **you** lose money using this library because this is a Kotlin Class for the Eobot.com Public API.
+
+## License
+
+GPL-3.0. See [gpl-3.0-standalone.html](http://www.gnu.org/licenses/gpl-3.0-standalone.html) for details.
