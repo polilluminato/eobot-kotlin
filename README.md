@@ -136,6 +136,15 @@ fun manualWithdraw(userId : String, email : String,
                                 listener : JSONObjectRequestListener) : Unit {}
 ```
 
+#### Buy Cloud with Cryptocurrency
+Programmatically buy Cloud. Pass in querystring (or post parameters) UserID, email, password/API Key, cloud type (GHS or GHS4 or SCRYPT), cryptocurrency source (BTC, ETH, LTC, etc.), and cryptocurrency amount.
+```kotlin
+fun buyCloudWithCryptocurrency(userId : String, email : String, 
+                                        password : String, currencyFrom : String, 
+                                        amount : String, cloudType : String, 
+                                        listener : JSONObjectRequestListener) : Unit {}
+```
+
 ### Disclaimer
 I'm **not** associated or **related** with Eobot.com, this is my implementation based on the public API. I'm **not** responsible if **you** lose money using this library because this is a Kotlin Class for the Eobot.com Public API.
 
