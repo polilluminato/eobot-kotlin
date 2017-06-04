@@ -22,4 +22,13 @@ class EobotAPI {
                 .getAsJSONObject(listener)
     }
 
+    fun getMiningMode(userId : String, listener : JSONObjectRequestListener) : Unit {
+        val urlToCall = urlApi+"idmining="+userId+"&json=true"
+        logger.info("Url to call: $urlToCall")
+        AndroidNetworking.get(urlToCall)
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsJSONObject(listener)
+    }
+
 }
