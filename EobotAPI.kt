@@ -8,7 +8,7 @@ import java.util.logging.Logger
 class EobotAPI {
 
     companion object {
-        val logger = Logger.getLogger(PasswordGenerator::class.java.name)
+        val logger = Logger.getLogger(EobotAPI::class.java.name)
     }
 
     var urlApi : String = "https://www.eobot.com/api.aspx?"
